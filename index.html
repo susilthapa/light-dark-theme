@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main
+      style="
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <select
+        id="themeSelector"
+        style="align-self: flex-end; margin-right: 2rem; width: 100px"
+      >
+        <option value="system">System</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+      <div>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter full name" />
+      </div>
+      <div
+        style="
+          width: 500px;
+          height: 200px;
+          overflow-y: scroll;
+          margin-top: 1rem;
+        "
+        id="blogContainer"
+      >
+        <h3>Blog</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil ullam,
+          sequi sapiente, dolore pariatur numquam recusandae autem natus odio,
+          vitae magni saepe minus distinctio facere! Molestiae totam nobis
+          placeat voluptatibus!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad commodi
+          quibusdam aut laudantium vitae, dolor porro, eius nam nihil mollitia
+          labore cum voluptatem a provident? Molestias placeat esse id est!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad commodi
+          quibusdam aut laudantium vitae, dolor porro, eius nam nihil mollitia
+          labore cum voluptatem a provident? Molestias placeat esse id est!
+        </p>
+      </div>
+    </main>
+
+    <script>
+      const themeSelector = document.getElementById("themeSelector");
+
+      themeSelector.addEventListener("change", (e) => {
+        if (themeSelector.value === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+        if (themeSelector.value === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+        if (themeSelector.value === "system") {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      });
+    </script>
+  </body>
+</html>
